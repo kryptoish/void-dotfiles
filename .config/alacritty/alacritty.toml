@@ -1,0 +1,23 @@
+[window]
+opacity = 0.90
+blur = false
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "JetBrainsMonoNL Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/Cobalt2.toml"
+]

@@ -1,0 +1,211 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "SF Compact", "SF Compact Text", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: rgba(22, 17, 18, 0.90);
+    border-bottom: 1px solid rgba(214, 100, 68, 0.25);
+    color: #e8ded6;
+}
+
+/* Void Linux Logo in Corner */
+#custom-void {
+    font-family: "JetBrainsMono Nerd Font", "SF Compact", sans-serif;
+    font-size: 14px;
+    color: #5ea882;
+    padding-left: 8px;
+    padding-right: 14px;
+    margin: 3px 2px 3px 4px;
+    background-color: rgba(36, 26, 27, 0.88);
+    border: 1px solid rgba(214, 100, 68, 0.20);
+    transition: all 0.15s ease;
+}
+
+#custom-void:hover {
+    background-color: rgba(54, 38, 39, 0.92);
+    border-color: rgba(230, 125, 85, 0.40);
+    color: #79c79f;
+}
+
+/* Current Workspace Tabs */
+#custom-tabs {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    padding: 0 2px;
+    margin: 3px 2px;
+}
+
+#custom-tabs:hover {
+    background-color: transparent;
+}
+
+/* Centered Workspaces */
+#workspaces {
+    font-family: "SF Compact", "SF Compact Text", "JetBrainsMono Nerd Font", sans-serif;
+    margin: 3px 0;
+    padding: 0 3px;
+    background-color: rgba(32, 23, 24, 0.88);
+    border: 1px solid rgba(214, 100, 68, 0.20);
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 2px 1px;
+    color: #9c8b85;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+}
+
+#workspaces button:hover {
+    background-color: rgba(62, 42, 42, 0.85);
+    border-color: rgba(230, 120, 80, 0.35);
+    color: #f5ece4;
+}
+
+#workspaces button.active {
+    background-color: rgba(184, 72, 50, 0.88);
+    border-color: rgba(240, 140, 105, 0.50);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: #d94030;
+    color: #ffffff;
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(26, 19, 20, 0.96);
+    border: 1px solid rgba(214, 100, 68, 0.35);
+    color: #e8ded6;
+}
+
+tooltip label {
+    font-family: "SF Compact", "SF Compact Text", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 11px;
+    padding: 6px;
+}
+
+/* CPU visual graph - strictly monospaced so bar graph icons maintain uniform width and baseline */
+#cpu {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    padding: 0 9px;
+    margin: 3px 2px;
+    background-color: rgba(36, 26, 27, 0.88);
+    border: 1px solid rgba(214, 100, 68, 0.20);
+    color: #9ec6eb;
+    transition: all 0.15s ease;
+}
+
+#cpu:hover {
+    background-color: rgba(58, 40, 41, 0.90);
+    border-color: rgba(230, 130, 90, 0.40);
+    color: #ffffff;
+}
+
+/* Right Modules Common Volcanic Translucent Style */
+#pulseaudio,
+#tray,
+#bluetooth,
+#battery,
+#clock {
+    font-family: "SF Compact", "SF Compact Text", "JetBrainsMono Nerd Font", sans-serif;
+    padding: 0 9px;
+    margin: 3px 2px;
+    background-color: rgba(36, 26, 27, 0.88);
+    border: 1px solid rgba(214, 100, 68, 0.20);
+    color: #d6cbc4;
+    transition: all 0.15s ease;
+}
+
+#pulseaudio:hover,
+#tray:hover,
+#bluetooth:hover,
+#battery:hover,
+#clock:hover {
+    background-color: rgba(58, 40, 41, 0.90);
+    border-color: rgba(230, 130, 90, 0.40);
+    color: #ffffff;
+}
+
+/* Bluetooth States */
+#bluetooth {
+    color: #8cb6eb;
+}
+
+#bluetooth.connected {
+    color: #5ea882;
+    border-color: rgba(94, 168, 130, 0.40);
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #7d6b68;
+}
+
+/* Clock */
+#clock {
+    margin-right: 4px;
+    padding: 0 10px;
+    color: #f2eae2;
+    font-weight: 500;
+}
+
+/* Audio / Pulseaudio */
+#pulseaudio.muted {
+    background-color: rgba(55, 24, 25, 0.85);
+    border-color: rgba(217, 64, 48, 0.45);
+    color: #e56555;
+}
+
+/* Battery - volcanic embers & molten warning tones */
+#battery.charging,
+#battery.plugged {
+    color: #f0a85d;
+}
+
+#battery.warning:not(.charging) {
+    background-color: rgba(65, 42, 22, 0.85);
+    border-color: rgba(235, 160, 60, 0.45);
+    color: #eeb060;
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba(75, 24, 24, 0.90);
+    border-color: rgba(220, 60, 50, 0.60);
+    color: #f05a4a;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(105, 30, 30, 0.95);
+        color: #ffffff;
+    }
+}
+
+/* System Tray */
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #d94030;
+}

@@ -1,0 +1,62 @@
+# Core Window Manager & Desktop Environment
+mangowc
+Waybar
+mako
+fuzzel
+awww
+swayidle
+swaylock
+network-manager-applet
+polkit-gnome
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+
+# File Manager & System Utilities
+Thunar
+tumbler
+gsimplecal-gtk3
+qalculate
+papirus-icon-theme
+
+# Terminal & Editors
+alacritty
+neovim
+vim
+
+# Shell & Command Line Tools
+bash-completion
+curl
+wget
+tar
+unzip
+git
+eza
+bat
+ripgrep
+fastfetch
+btop
+tree
+direnv
+jq
+wl-clipboard
+cliphist
+grim
+slurp
+brightnessctl
+
+# Audio
+pipewire
+wireplumber
+alsa-pipewire
+libspa-bluetooth
+alsa-utils
+
+# Bluetooth & Network
+bluez
+blueman
+NetworkManager
+
+# Fonts
+nerd-fonts-symbols-ttf
+noto-fonts-ttf
+noto-fonts-emoji
