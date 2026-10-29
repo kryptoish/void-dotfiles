@@ -37,6 +37,7 @@ fastfetch
 btop
 tree
 direnv
+zoxide
 jq
 wl-clipboard
 cliphist

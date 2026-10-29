@@ -15,15 +15,19 @@ pipewire &
 wireplumber &
 pipewire-pulse &
 
+# Screen sharing / OBS: give portals the Wayland session env, then (re)start them
+dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=mango XDG_SESSION_TYPE DISPLAY
+(sleep 1 && pkill -f '^/usr/libexec/xdg-desktop-portal'; /usr/libexec/xdg-desktop-portal-wlr & sleep 0.5; /usr/libexec/xdg-desktop-portal &) &
+
 # Notification daemon
 mako &
 
 # Wallpaper daemon and image
 swww-daemon &
-(sleep 0.5 && swww img "$HOME/Pictures/wallpapers/wallpaper_destruction.png" --transition-type fade --transition-duration 1) &
+(sleep 0.5 && swww img /home/krish/Pictures/wallpapers/wallpaper_destruction.png --transition-type fade --transition-duration 1) &
 
 # Status bar and tray
-(sleep 0.5 && waybar) &
+(sleep 0.5 && ~/.config/waybar/scripts/launch.sh) &
 (sleep 1.2 && nm-applet --indicator) &
 
 # Idle power saving

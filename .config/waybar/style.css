@@ -20,17 +20,10 @@ window#waybar {
     font-family: "JetBrainsMono Nerd Font", "SF Compact", sans-serif;
     font-size: 14px;
     color: #5ea882;
-    padding-left: 8px;
-    padding-right: 14px;
-    margin: 3px 2px 3px 4px;
-    background-color: rgba(36, 26, 27, 0.88);
-    border: 1px solid rgba(214, 100, 68, 0.20);
-    transition: all 0.15s ease;
+    padding: 0 14px 0 12px;
 }
 
 #custom-void:hover {
-    background-color: rgba(54, 38, 39, 0.92);
-    border-color: rgba(230, 125, 85, 0.40);
     color: #79c79f;
 }
 
@@ -38,47 +31,35 @@ window#waybar {
 #custom-tabs {
     font-family: "JetBrainsMono Nerd Font", sans-serif;
     padding: 0 2px;
-    margin: 3px 2px;
-}
-
-#custom-tabs:hover {
-    background-color: transparent;
 }
 
 /* Centered Workspaces */
 #workspaces {
     font-family: "SF Compact", "SF Compact Text", "JetBrainsMono Nerd Font", sans-serif;
-    margin: 3px 0;
-    padding: 0 3px;
-    background-color: rgba(32, 23, 24, 0.88);
-    border: 1px solid rgba(214, 100, 68, 0.20);
 }
 
 #workspaces button {
     padding: 0 8px;
-    margin: 2px 1px;
     color: #9c8b85;
     background: transparent;
-    border: 1px solid transparent;
-    transition: all 0.15s ease;
+    box-shadow: none;
+    border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    background-color: rgba(62, 42, 42, 0.85);
-    border-color: rgba(230, 120, 80, 0.35);
+    background: transparent;
+    box-shadow: none;
     color: #f5ece4;
 }
 
 #workspaces button.active {
-    background-color: rgba(184, 72, 50, 0.88);
-    border-color: rgba(240, 140, 105, 0.50);
     color: #ffffff;
     font-weight: bold;
+    border-bottom: 2px solid #5ea882;
 }
 
 #workspaces button.urgent {
-    background-color: #d94030;
-    color: #ffffff;
+    color: #d94030;
 }
 
 /* Tooltips */
@@ -94,46 +75,40 @@ tooltip label {
     padding: 6px;
 }
 
-/* CPU visual graph - strictly monospaced so bar graph icons maintain uniform width and baseline */
-#cpu {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    padding: 0 9px;
-    margin: 3px 2px;
-    background-color: rgba(36, 26, 27, 0.88);
-    border: 1px solid rgba(214, 100, 68, 0.20);
-    color: #9ec6eb;
-    transition: all 0.15s ease;
-}
-
-#cpu:hover {
-    background-color: rgba(58, 40, 41, 0.90);
-    border-color: rgba(230, 130, 90, 0.40);
-    color: #ffffff;
-}
-
-/* Right Modules Common Volcanic Translucent Style */
+/* Right side: plain text sections, no boxes */
+#cpu,
 #pulseaudio,
 #tray,
 #bluetooth,
 #battery,
 #clock {
-    font-family: "SF Compact", "SF Compact Text", "JetBrainsMono Nerd Font", sans-serif;
-    padding: 0 9px;
-    margin: 3px 2px;
-    background-color: rgba(36, 26, 27, 0.88);
-    border: 1px solid rgba(214, 100, 68, 0.20);
+    padding: 0 10px;
+    background: transparent;
     color: #d6cbc4;
-    transition: all 0.15s ease;
 }
 
+/* Thin divider between each right-side section */
+#pulseaudio,
+#tray,
+#bluetooth,
+#battery,
+#clock {
+    margin: 9px 0;
+    border-left: 1px solid rgba(214, 203, 196, 0.18);
+}
+
+#cpu:hover,
 #pulseaudio:hover,
-#tray:hover,
 #bluetooth:hover,
 #battery:hover,
 #clock:hover {
-    background-color: rgba(58, 40, 41, 0.90);
-    border-color: rgba(230, 130, 90, 0.40);
     color: #ffffff;
+}
+
+/* CPU visual graph - strictly monospaced so bar graph icons maintain uniform width and baseline */
+#cpu {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    color: #9ec6eb;
 }
 
 /* Bluetooth States */
@@ -143,7 +118,6 @@ tooltip label {
 
 #bluetooth.connected {
     color: #5ea882;
-    border-color: rgba(94, 168, 130, 0.40);
 }
 
 #bluetooth.disabled,
@@ -153,16 +127,12 @@ tooltip label {
 
 /* Clock */
 #clock {
-    margin-right: 4px;
-    padding: 0 10px;
+    padding: 0 14px 0 10px;
     color: #f2eae2;
-    font-weight: 500;
 }
 
 /* Audio / Pulseaudio */
 #pulseaudio.muted {
-    background-color: rgba(55, 24, 25, 0.85);
-    border-color: rgba(217, 64, 48, 0.45);
     color: #e56555;
 }
 
@@ -173,14 +143,10 @@ tooltip label {
 }
 
 #battery.warning:not(.charging) {
-    background-color: rgba(65, 42, 22, 0.85);
-    border-color: rgba(235, 160, 60, 0.45);
     color: #eeb060;
 }
 
 #battery.critical:not(.charging) {
-    background-color: rgba(75, 24, 24, 0.90);
-    border-color: rgba(220, 60, 50, 0.60);
     color: #f05a4a;
     animation-name: blink;
     animation-duration: 1s;
@@ -191,21 +157,15 @@ tooltip label {
 
 @keyframes blink {
     to {
-        background-color: rgba(105, 30, 30, 0.95);
         color: #ffffff;
     }
 }
 
 /* System Tray */
-#tray {
-    padding: 0 8px;
-}
-
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #d94030;
 }

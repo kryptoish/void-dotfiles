@@ -21,3 +21,8 @@ style = "Italic"
 import = [
     "~/.config/alacritty/themes/themes/Cobalt2.toml"
 ]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

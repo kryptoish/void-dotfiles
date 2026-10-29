@@ -69,7 +69,7 @@ alias gst='git status'
 alias vi='nvim'
 alias vim='nvim'
 alias fetch='fetch --shading-mode sextants'
-alias waybar-reload='pkill -x waybar; waybar > ~/.config/waybar/waybar.log 2>&1 & disown'
+alias waybar-reload='setsid -f ~/.config/waybar/scripts/launch.sh >/dev/null 2>&1'
 alias xinstall='xbps-install'
 alias xsrc='xbps-src'
 
@@ -92,6 +92,11 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# Zoxide (replaces cd)
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init bash --cmd cd)"
 fi
 
 # Direnv
